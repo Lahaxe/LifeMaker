@@ -26,3 +26,12 @@
 *.exe
 *.out
 *.app
+
+# Compiled directory
+build
+
+# Qt Creator files
+*.pro.user
+
+# Cmake user file
+*.txt.user
