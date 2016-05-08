@@ -14,12 +14,16 @@ TEMPLATE = app
 DEPENDPATH += $$PWD/src/
 INCLUDEPATH += $$PWD/src/
 
-SOURCES += ./src/applications/lifemaker.cpp\
-        ./src/gui/MainWindow.cpp
+SOURCES += ./src/applications/lifemaker.cpp \
+        ./src/gui/MainWindow.cpp \
+        ./src/lifemaker/core/Exception.cpp \
+        ./src/lifemaker/core/Logger.cpp
 
-HEADERS  += ./src/gui/MainWindow.h
+HEADERS += ./src/gui/MainWindow.h \
+        ./src/lifemaker/core/Exception.h \
+        ./src/lifemaker/core/Logger.h
 
-FORMS    += ./src/gui/mainwindow.ui
+FORMS += ./src/gui/mainwindow.ui
 
 CONFIG += mobility
 MOBILITY = 

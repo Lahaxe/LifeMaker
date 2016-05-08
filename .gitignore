@@ -35,3 +35,6 @@ build
 
 # Cmake user file
 *.txt.user
+
+# Temporary files
+*.txt~

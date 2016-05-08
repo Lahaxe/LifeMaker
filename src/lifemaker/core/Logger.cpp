@@ -2,13 +2,16 @@
  * LifeMaker - Copyright (C) Lahaxe Romain
  *******************************************************************************/
 
+#ifdef USE_LOG4CPP
 #include <iostream>
+#endif
 
 #include "Logger.h"
 
 namespace lifemaker
 {
 
+#ifdef USE_LOG4CPP
 void InitializeLogger(std::string const & priority)
 {
     log4cpp::Appender *appender1 = new log4cpp::OstreamAppender("console",
@@ -53,5 +56,6 @@ log4cpp::CategoryStream loggerWarning()
 {
     return getLogger(log4cpp::Priority::WARN);
 }
+#endif
 
 } // namespace lifemaker

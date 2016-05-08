@@ -5,7 +5,8 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../src/)
 link_directories(${Boost_LIBRARY_DIRS})
 
 add_definitions(-DHAVE_CONFIG_H)
-ADD_DEFINITIONS(-DBOOST_TEST_DYN_LINK)
+add_definitions(-DBOOST_TEST_DYN_LINK)
+add_definitions(-DUSE_LOG4CPP)
 
 file(GLOB_RECURSE tests *.cpp)
 foreach(test_file ${tests})
