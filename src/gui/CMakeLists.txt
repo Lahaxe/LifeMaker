@@ -18,7 +18,7 @@ qt5_wrap_cpp(files_HEADERS_MOC ${files_HEADERS})
 qt5_wrap_ui(files_FORMS_HEADERS ${files_FORMS})
 qt5_add_resources(files_RESOURCES_RCC ${files_RESOURCES})
 
-set(CMAKE_CXX_FLAGS "${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
 
 add_definitions(-DBOOST_FILESYSTEM_VERSION=3)
 add_definitions(-DHAVE_CONFIG_H)
@@ -29,5 +29,5 @@ add_library(liblifemakergui SHARED ${files}
                                    ${files_RESOURCES_RCC})
 
 set_target_properties(liblifemakergui PROPERTIES OUTPUT_NAME lifemakergui)
-target_link_libraries(liblifemakergui ${Qt5Widgets_LIBRARIES})
+target_link_libraries(liblifemakergui liblifemaker ${Qt5Widgets_LIBRARIES})
 

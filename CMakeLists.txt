@@ -12,6 +12,7 @@ option(BUILD_EXAMPLES "Build the examples directory." ON)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}" ${CMAKE_MODULE_PATH})
 include(CTest)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 add_subdirectory(src)
 
 if (BUILD_TESTING)
