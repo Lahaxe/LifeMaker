@@ -16,44 +16,47 @@
 #include <QDebug>
 #endif
 
+#ifdef USE_LOG4CPP
 namespace lifemaker
 {
 
-#ifdef USE_LOG4CPP
-static std::map<std::string, log4cpp::Priority::PriorityLevel> level_dictionary =
-{
-    { "", log4cpp::Priority::DEBUG },       // Default
-    { "ERROR", log4cpp::Priority::ERROR },
-    { "WARNING", log4cpp::Priority::WARN },
-    { "INFO", log4cpp::Priority::INFO },
-    { "DEBUG", log4cpp::Priority::DEBUG }
-};
+    static std::map<std::string, log4cpp::Priority::PriorityLevel> level_dictionary =
+    {
+        { "", log4cpp::Priority::DEBUG },       // Default
+        { "ERROR", log4cpp::Priority::ERROR },
+        { "WARNING", log4cpp::Priority::WARN },
+        { "INFO", log4cpp::Priority::INFO },
+        { "DEBUG", log4cpp::Priority::DEBUG }
+    };
 
-void InitializeLogger(std::string const & priority);
+    void initialize_logger(std::string const & priority);
 
-log4cpp::CategoryStream getLogger(log4cpp::Priority::PriorityLevel const & level);
+    log4cpp::CategoryStream getLogger(log4cpp::Priority::PriorityLevel const & level);
 
-log4cpp::CategoryStream getLogger(std::string const & priority);
+    log4cpp::CategoryStream getLogger(std::string const & priority);
 
-log4cpp::CategoryStream loggerDebug();
+    log4cpp::CategoryStream loggerDebug();
 
-log4cpp::CategoryStream loggerError();
+    log4cpp::CategoryStream loggerError();
 
-log4cpp::CategoryStream loggerInfo();
+    log4cpp::CategoryStream loggerInfo();
 
-log4cpp::CategoryStream loggerWarning();
-
-#define LOGGER_DEBUG loggerDebug()
-#define LOGGER_ERROR loggerError()
-#define LOGGER_WARNING loggerInfo()
-#define LOGGER_INFO loggerWarning()
-#else
-#define LOGGER_DEBUG (qDebug() << "DEBUG: ")
-#define LOGGER_ERROR (qDebug() << "ERROR: ")
-#define LOGGER_WARNING (qDebug() << "WARNING: ")
-#define LOGGER_INFO (qDebug() << "INFO: ")
-#endif
+    log4cpp::CategoryStream loggerWarning();
 
 } // namespace lifemaker
+
+    #define LOGGER_DEBUG lifemaker::loggerDebug()
+    #define LOGGER_ERROR lifemaker::loggerError()
+    #define LOGGER_WARNING lifemaker::loggerWarning()
+    #define LOGGER_INFO lifemaker::loggerInfo()
+
+#else
+
+    #define LOGGER_DEBUG (qDebug() << "DEBUG: ")
+    #define LOGGER_ERROR (qDebug() << "ERROR: ")
+    #define LOGGER_WARNING (qDebug() << "WARNING: ")
+    #define LOGGER_INFO (qDebug() << "INFO: ")
+
+#endif
 
 #endif // _30a37e0c_2ffb_4007_924d_2c32915654cd

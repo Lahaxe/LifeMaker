@@ -32,10 +32,10 @@ struct TestDataLogger
 BOOST_FIXTURE_TEST_CASE(No_Initialization, TestDataLogger)
 {
     // Test
-    lifemaker::loggerError() << " test ";
-    lifemaker::loggerWarning() << " test ";
-    lifemaker::loggerInfo() << " test ";
-    lifemaker::loggerDebug() << " test ";
+    LOGGER_ERROR << " test ";
+    LOGGER_WARNING << " test ";
+    LOGGER_INFO << " test ";
+    LOGGER_DEBUG << " test ";
 
     BOOST_CHECK_EQUAL(stream.str(), "");
 }
@@ -47,13 +47,13 @@ BOOST_FIXTURE_TEST_CASE(No_Initialization, TestDataLogger)
 BOOST_FIXTURE_TEST_CASE(InitializeloggerError, TestDataLogger)
 {
     // Initialize logger
-    lifemaker::InitializeLogger("ERROR");
+    lifemaker::initialize_logger("ERROR");
 
     // Test
-    lifemaker::loggerError() << " test ";
-    lifemaker::loggerWarning() << " test ";
-    lifemaker::loggerInfo() << " test ";
-    lifemaker::loggerDebug() << " test ";
+    LOGGER_ERROR << " test ";
+    LOGGER_WARNING << " test ";
+    LOGGER_INFO << " test ";
+    LOGGER_DEBUG << " test ";
 
     BOOST_REQUIRE(stream.str() != "");
 
@@ -70,13 +70,13 @@ BOOST_FIXTURE_TEST_CASE(InitializeloggerError, TestDataLogger)
 BOOST_FIXTURE_TEST_CASE(InitializeloggerWarning, TestDataLogger)
 {
     // Initialize logger
-    lifemaker::InitializeLogger("WARNING");
+    lifemaker::initialize_logger("WARNING");
 
     // Test
-    lifemaker::loggerError() << " test ";
-    lifemaker::loggerWarning() << " test ";
-    lifemaker::loggerInfo() << " test ";
-    lifemaker::loggerDebug() << " test ";
+    LOGGER_ERROR << " test ";
+    LOGGER_WARNING << " test ";
+    LOGGER_INFO << " test ";
+    LOGGER_DEBUG << " test ";
 
     BOOST_REQUIRE(stream.str() != "");
 
@@ -93,13 +93,13 @@ BOOST_FIXTURE_TEST_CASE(InitializeloggerWarning, TestDataLogger)
 BOOST_FIXTURE_TEST_CASE(InitializeloggerInfo, TestDataLogger)
 {
     // Initialize logger
-    lifemaker::InitializeLogger("INFO");
+    lifemaker::initialize_logger("INFO");
 
     // Test
-    lifemaker::loggerError() << " test ";
-    lifemaker::loggerWarning() << " test ";
-    lifemaker::loggerInfo() << " test ";
-    lifemaker::loggerDebug() << " test ";
+    LOGGER_ERROR << " test ";
+    LOGGER_WARNING << " test ";
+    LOGGER_INFO << " test ";
+    LOGGER_DEBUG << " test ";
 
     BOOST_REQUIRE(stream.str() != "");
 
@@ -116,13 +116,13 @@ BOOST_FIXTURE_TEST_CASE(InitializeloggerInfo, TestDataLogger)
 BOOST_FIXTURE_TEST_CASE(InitializeloggerDebug, TestDataLogger)
 {
     // Initialize logger
-    lifemaker::InitializeLogger("DEBUG");
+    lifemaker::initialize_logger("DEBUG");
 
     // Test
-    lifemaker::loggerError() << " test ";
-    lifemaker::loggerWarning() << " test ";
-    lifemaker::loggerInfo() << " test ";
-    lifemaker::loggerDebug() << " test ";
+    LOGGER_ERROR << " test ";
+    LOGGER_WARNING << " test ";
+    LOGGER_INFO << " test ";
+    LOGGER_DEBUG << " test ";
 
     BOOST_REQUIRE(stream.str() != "");
 
@@ -139,13 +139,13 @@ BOOST_FIXTURE_TEST_CASE(InitializeloggerDebug, TestDataLogger)
 BOOST_FIXTURE_TEST_CASE(InitializeLogger_Default, TestDataLogger)
 {
     // Initialize logger
-    lifemaker::InitializeLogger("");
+    lifemaker::initialize_logger("");
 
     // Test
-    lifemaker::loggerError() << " test ";
-    lifemaker::loggerWarning() << " test ";
-    lifemaker::loggerInfo() << " test ";
-    lifemaker::loggerDebug() << " test ";
+    LOGGER_ERROR << " test ";
+    LOGGER_WARNING << " test ";
+    LOGGER_INFO << " test ";
+    LOGGER_DEBUG << " test ";
 
     BOOST_REQUIRE(stream.str() != "");
 
@@ -162,7 +162,7 @@ BOOST_FIXTURE_TEST_CASE(InitializeLogger_Default, TestDataLogger)
 BOOST_FIXTURE_TEST_CASE(GetLogger_DEBUG, TestDataLogger)
 {
     // Initialize logger
-    lifemaker::InitializeLogger("");
+    lifemaker::initialize_logger("");
 
     // Test
     lifemaker::getLogger("ERROR") << " test ";

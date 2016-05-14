@@ -1,5 +1,5 @@
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../)
 
 add_definitions(-DBOOST_FILESYSTEM_VERSION=3)
 add_definitions(-DHAVE_CONFIG_H)

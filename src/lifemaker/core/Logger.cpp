@@ -12,7 +12,7 @@ namespace lifemaker
 {
 
 #ifdef USE_LOG4CPP
-void InitializeLogger(std::string const & priority)
+void initialize_logger(std::string const & priority)
 {
     log4cpp::Appender *appender1 = new log4cpp::OstreamAppender("console",
                                                                 &std::cout);
