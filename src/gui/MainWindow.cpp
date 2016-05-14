@@ -1,14 +1,22 @@
 #include "MainWindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent) :
+#include <QDesktopWidget>
+
+MainWindow
+::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    _ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
+    this->_ui->setupUi(this);
+
+    // Resize to screen
+    this->resize(QDesktopWidget().screenGeometry().width(),
+                 QDesktopWidget().screenGeometry().height());
 }
 
-MainWindow::~MainWindow()
+MainWindow
+::~MainWindow()
 {
-    delete ui;
+    delete this->_ui;
 }
