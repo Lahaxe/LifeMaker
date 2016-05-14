@@ -3,6 +3,7 @@
  *******************************************************************************/
 
 #include <algorithm>
+#include <sstream>
 
 #include "Relations.h"
 #include "lifemaker/core/Exception.h"
