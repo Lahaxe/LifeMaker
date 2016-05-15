@@ -53,8 +53,8 @@ namespace lifemaker
 #else
 
     #define LOGGER_DEBUG (qDebug() << "DEBUG: ")
-    #define LOGGER_ERROR (qDebug() << "ERROR: ")
-    #define LOGGER_WARNING (qDebug() << "WARNING: ")
+    #define LOGGER_ERROR (qCritical() << "ERROR: ")
+    #define LOGGER_WARNING (qWarning() << "WARNING: ")
     #define LOGGER_INFO (qDebug() << "INFO: ")
 
 #endif

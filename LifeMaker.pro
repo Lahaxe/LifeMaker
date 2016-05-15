@@ -23,7 +23,10 @@ SOURCES += ./src/applications/lifemaker.cpp \
         ./src/lifemaker/objects/Element.cpp \
         ./src/lifemaker/objects/Relation.cpp \
         ./src/lifemaker/objects/Relations.cpp \
-        ./src/lifemaker/tools/StringTools.cpp
+        ./src/lifemaker/tools/StringTools.cpp \
+    ./src/gui/ElementUI.cpp \
+    src/gui/Controller.cpp \
+    src/gui/tools/Tools.cpp
 
 HEADERS += ./src/gui/MainWindow.h \
         ./src/lifemaker/core/Exception.h \
@@ -33,11 +36,16 @@ HEADERS += ./src/gui/MainWindow.h \
         ./src/lifemaker/objects/Element.h \
         ./src/lifemaker/objects/Relation.h \
         ./src/lifemaker/objects/Relations.h \
-        ./src/lifemaker/tools/StringTools.h
+        ./src/lifemaker/tools/StringTools.h \
+    ./src/gui/ElementUI.h \
+    src/gui/Controller.h \
+    src/gui/tools/Tools.h
 
-FORMS += ./src/gui/mainwindow.ui
+FORMS += ./src/gui/mainwindow.ui \
+    ./src/gui/ElementUI.ui
 
 CONFIG += mobility
+CONFIG += console
 MOBILITY = 
 
 QMAKE_CXXFLAGS += -std=c++11

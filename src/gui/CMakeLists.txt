@@ -13,6 +13,7 @@ file(GLOB_RECURSE files_RESOURCES "*.qrc")
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}
                     ${CMAKE_CURRENT_BINARY_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}/../
+                    ${CMAKE_CURRENT_SOURCE_DIR}/../../
                     ${Qt5Widgets_INCLUDES})
 
 qt5_wrap_cpp(files_HEADERS_MOC ${files_HEADERS})
